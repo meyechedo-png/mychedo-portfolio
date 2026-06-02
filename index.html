@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Chedo — Social Media & Digital Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:    #0C0C0C;
+  --ink:      #1A1A1A;
+  --charcoal: #2C2C2C;
+  --dim:      #454545;
+  --gray:     #5E5E5E;
+  --silver:   #999999;
+  --cloud:    #D4D4D4;
+  --mist:     #E8E6E2;
+  --paper:    #F3F1EE;
+  --white:    #FAFAF8;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'IBM Plex Sans', sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+/* ── HERO ── */
+.hero {
+  background:var(--black);
+  color:var(--white);
+  min-height:100vh;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+}
+
+.hero-nav {
+  padding:28px 72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav-logo {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.2em;
+  color:var(--silver);
+  text-transform:uppercase;
+}
+
+.nav-links {
+  display:flex;
+  gap:36px;
+  list-style:none;
+  align-items:center;
+}
+
+.nav-links a {
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--silver);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover { color:var(--white); }
+
+.nav-social {
+  display:flex;
+  gap:10px;
+}
+
+.nav-social a {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--black);
+  background:rgba(255,255,255,0.9);
+  padding:5px 11px;
+  text-decoration:none;
+  transition:background 0.2s, color 0.2s;
+  border:1px solid rgba(255,255,255,0.2);
+}
+.nav-social a:hover { background:var(--white); color:var(--black); }
+
+.hero-body {
+  padding:72px 72px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-overline {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--silver);
+  margin-bottom:32px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.hero-overline::before {
+  content:'';
+  width:24px; height:1px;
+  background:var(--silver);
+}
+
+.hero h1 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(72px, 10.5vw, 144px);
+  font-weight:300;
+  line-height:0.88;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  margin-bottom:48px;
+}
+.hero h1 span {
+  display:block;
+  font-style:italic;
+}
+
+.hero-lower {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:64px;
+  align-items:end;
+}
+
+.hero-bio {
+  font-size:15px;
+  font-weight:300;
+  line-height:1.8;
+  color:var(--cloud);
+  max-width:500px;
+}
+
+.hero-right {
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  align-items:flex-end;
+}
+
+.hero-contact {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  text-align:right;
+}
+.hero-contact a, .hero-contact span {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:var(--silver);
+  text-decoration:none;
+  letter-spacing:0.05em;
+  transition:color 0.2s;
+}
+.hero-contact a:hover { color:var(--white); }
+
+.hero-socials {
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+
+.social-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:7px 14px;
+  text-decoration:none;
+  transition:all 0.2s;
+  white-space:nowrap;
+}
+.social-btn:hover {
+  background:var(--white);
+  color:var(--black);
+  border-color:var(--white);
+}
+.social-btn svg {
+  width:12px; height:12px;
+  fill:currentColor;
+  flex-shrink:0;
+}
+
+.hero-foot {
+  padding:24px 72px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.hero-foot span {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  color:rgba(255,255,255,0.22);
+  letter-spacing:0.1em;
+}
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  background:var(--ink);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.stat-cell {
+  padding:32px 28px;
+  border-right:1px solid rgba(255,255,255,0.06);
+  text-align:center;
+  transition:background 0.2s;
+}
+.stat-cell:last-child { border-right:none; }
+.stat-cell:hover { background:var(--charcoal); }
+
+.stat-n {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(26px, 2.8vw, 42px);
+  font-weight:300;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:5px;
+}
+.stat-l {
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--gray);
+}
+
+/* ── SECTIONS ── */
+.section { padding:92px 72px; }
+.section-paper { background:var(--paper); }
+.section-dark { background:var(--black); color:var(--white); }
+.section-mist { background:var(--mist); }
+
+.section-tag {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--silver);
+  margin-bottom:10px;
+}
+.section-dark .section-tag { color:var(--gray); }
+
+.section-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(34px, 4.5vw, 58px);
+  font-weight:300;
+  line-height:1.05;
+  color:var(--ink);
+  margin-bottom:56px;
+}
+.section-dark .section-title { color:var(--white); }
+.section-title em { font-style:italic; }
+
+/* ── CAPABILITIES GRID ── */
+.cap-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border-top:1px solid var(--cloud);
+  border-left:1px solid var(--cloud);
+}
+
+.cap-card {
+  border-right:1px solid var(--cloud);
+  border-bottom:1px solid var(--cloud);
+  padding:34px 30px;
+  transition:background 0.25s;
+  position:relative;
+  overflow:hidden;
+}
+.cap-card::after {
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  width:0; height:2px;
+  background:var(--ink);
+  transition:width 0.35s ease;
+}
+.cap-card:hover { background:var(--ink); }
+.cap-card:hover::after { width:100%; }
+.cap-card:hover .cap-title { color:var(--white); }
+.cap-card:hover .cap-tag { color:var(--silver); border-color:rgba(255,255,255,0.14); }
+
+.cap-num {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  color:var(--cloud);
+  letter-spacing:0.12em;
+  margin-bottom:14px;
+}
+.cap-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:19px;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:13px;
+  line-height:1.2;
+  transition:color 0.25s;
+}
+.cap-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.cap-tag {
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gray);
+  border:1px solid var(--cloud);
+  padding:3px 8px;
+  transition:color 0.25s, border-color 0.25s;
+}
+
+/* ── EXPERIENCE ── */
+.exp-item {
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:48px;
+  padding:52px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.section-paper .exp-item { border-bottom:1px solid var(--cloud); }
+.exp-item:last-child { border-bottom:none; padding-bottom:0; }
+
+.exp-org {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--silver);
+  margin-bottom:8px;
+}
+.exp-date {
+  font-size:11px;
+  font-weight:300;
+  color:var(--gray);
+  line-height:1.7;
+  margin-bottom:12px;
+}
+.exp-link {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--silver);
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.12);
+  padding:5px 10px;
+  transition:all 0.2s;
+}
+.section-paper .exp-link {
+  color:var(--gray);
+  border-color:var(--cloud);
+}
+.exp-link:hover {
+  background:var(--white);
+  color:var(--black);
+  border-color:var(--white);
+}
+.section-paper .exp-link:hover {
+  background:var(--ink);
+  color:var(--white);
+  border-color:var(--ink);
+}
+.exp-link svg { width:10px; height:10px; fill:currentColor; }
+
+.exp-role {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(20px, 2.6vw, 28px);
+  font-weight:300;
+  font-style:italic;
+  color:var(--white);
+  margin-bottom:20px;
+  line-height:1.2;
+}
+.section-paper .exp-role { color:var(--ink); }
+
+.exp-list {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.exp-list li {
+  font-size:13.5px;
+  font-weight:300;
+  line-height:1.75;
+  color:var(--silver);
+  padding-left:18px;
+  position:relative;
+}
+.section-paper .exp-list li { color:var(--charcoal); }
+.exp-list li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  font-size:9px;
+  top:5px;
+  color:var(--dim);
+}
+.exp-list strong { color:var(--white); font-weight:500; }
+.section-paper .exp-list strong { color:var(--ink); font-weight:600; }
+
+.exp-chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+.exp-chip {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gray);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:3px 9px;
+}
+.section-paper .exp-chip { border-color:var(--cloud); }
+
+/* ── PROJECTS ── */
+.proj-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--cloud);
+  border:1px solid var(--cloud);
+}
+.proj-card {
+  background:var(--white);
+  padding:44px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:280px;
+  transition:background 0.25s;
+}
+.proj-card:hover { background:var(--mist); }
+.proj-label {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--silver);
+  margin-bottom:12px;
+}
+.proj-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:12px;
+  line-height:1.25;
+}
+.proj-desc {
+  font-size:13px;
+  font-weight:300;
+  line-height:1.75;
+  color:var(--charcoal);
+}
+.proj-metric {
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--cloud);
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+}
+.proj-metric-n {
+  font-family:'Cormorant Garamond', serif;
+  font-size:38px;
+  font-weight:300;
+  color:var(--ink);
+  line-height:1;
+}
+.proj-metric-l {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--silver);
+  max-width:180px;
+  line-height:1.5;
+}
+
+/* ── SOCIAL SHOWCASE ── */
+.social-showcase {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:rgba(255,255,255,0.06);
+}
+.social-card {
+  background:var(--charcoal);
+  padding:44px 36px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  transition:background 0.25s;
+  text-decoration:none;
+  color:inherit;
+}
+.social-card:hover { background:var(--dim); }
+.social-card-top {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.social-handle {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.1em;
+  color:var(--silver);
+  margin-bottom:8px;
+}
+.social-name {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px;
+  font-style:italic;
+  color:var(--white);
+  line-height:1.2;
+}
+.social-arrow {
+  font-size:20px;
+  color:var(--gray);
+  transition:color 0.2s, transform 0.2s;
+}
+.social-card:hover .social-arrow {
+  color:var(--white);
+  transform:translate(3px, -3px);
+}
+.social-desc {
+  font-size:13px;
+  font-weight:300;
+  line-height:1.7;
+  color:var(--silver);
+}
+.social-stat {
+  font-family:'Cormorant Garamond', serif;
+  font-size:36px;
+  font-weight:300;
+  color:var(--white);
+  line-height:1;
+}
+.social-stat-l {
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--gray);
+  margin-top:3px;
+}
+
+/* ── TOOLS ── */
+.tools-wrap { display:flex; flex-wrap:wrap; gap:8px; }
+.tool {
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:0.07em;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:9px 18px;
+  transition:all 0.2s;
+  cursor:default;
+}
+.tool:hover { background:var(--white); color:var(--black); border-color:var(--white); }
+.tool.featured {
+  background:rgba(255,255,255,0.07);
+  border-color:rgba(255,255,255,0.32);
+}
+
+/* ── HONORS ── */
+.honors-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:1px;
+  background:var(--cloud);
+  border:1px solid var(--cloud);
+  margin-bottom:60px;
+}
+.honor-card {
+  background:var(--white);
+  padding:28px 32px;
+  transition:background 0.2s;
+}
+.honor-card:hover { background:var(--mist); }
+.honor-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:17px;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.honor-org {
+  font-size:11px;
+  font-weight:300;
+  color:var(--gray);
+  margin-bottom:3px;
+}
+.honor-date {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  color:var(--cloud);
+  letter-spacing:0.08em;
+}
+
+/* ── EDUCATION ── */
+.edu-card {
+  border:1px solid var(--cloud);
+  padding:48px 52px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:start;
+  background:var(--white);
+}
+.edu-school {
+  font-family:'Cormorant Garamond', serif;
+  font-size:28px;
+  font-weight:300;
+  color:var(--ink);
+  margin-bottom:10px;
+}
+.edu-degrees {
+  font-size:13.5px;
+  font-weight:300;
+  line-height:1.8;
+  color:var(--charcoal);
+  margin-bottom:20px;
+}
+.edu-badges { display:flex; flex-wrap:wrap; gap:7px; }
+.edu-badge {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--white);
+  background:var(--ink);
+  padding:4px 11px;
+}
+.edu-year {
+  font-family:'Cormorant Garamond', serif;
+  font-size:64px;
+  font-weight:300;
+  color:var(--cloud);
+  line-height:1;
+}
+
+/* ── VOLUNTEER ── */
+.vol-list { display:flex; flex-direction:column; gap:0; }
+.vol-item {
+  padding:28px 0;
+  border-bottom:1px solid var(--cloud);
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:36px;
+}
+.vol-item:last-child { border-bottom:none; }
+.vol-org {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--silver);
+  margin-bottom:4px;
+}
+.vol-date { font-size:11px; font-weight:300; color:var(--gray); }
+.vol-role {
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.vol-desc { font-size:13px; font-weight:300; line-height:1.7; color:var(--charcoal); }
+
+/* ── LANGUAGES ── */
+.lang-row { display:flex; gap:32px; margin-top:20px; }
+.lang-item {
+  border:1px solid var(--cloud);
+  padding:20px 28px;
+  background:var(--white);
+}
+.lang-name {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.lang-level {
+  font-size:11px;
+  font-weight:300;
+  color:var(--gray);
+  letter-spacing:0.06em;
+}
+
+/* ── RECOMMENDATION ── */
+.rec-card {
+  background:var(--charcoal);
+  padding:40px 44px;
+  max-width:720px;
+  border-left:3px solid rgba(255,255,255,0.15);
+}
+.rec-text {
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px;
+  font-style:italic;
+  font-weight:300;
+  color:var(--cloud);
+  line-height:1.7;
+  margin-bottom:20px;
+}
+.rec-attr {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--gray);
+}
+
+/* ── FOOTER ── */
+.footer {
+  background:var(--ink);
+  padding:72px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:end;
+  gap:60px;
+}
+.footer-headline {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(28px, 4vw, 50px);
+  font-weight:300;
+  color:var(--white);
+  line-height:1.15;
+  max-width:540px;
+  margin-bottom:32px;
+}
+.footer-headline em { font-style:italic; }
+.footer-socials { display:flex; gap:8px; flex-wrap:wrap; }
+.footer-info {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  text-align:right;
+}
+.footer-info a, .footer-info span {
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:var(--gray);
+  text-decoration:none;
+  letter-spacing:0.05em;
+  transition:color 0.2s;
+}
+.footer-info a:hover { color:var(--white); }
+
+/* ── DIVIDER ── */
+.divider { height:1px; background:rgba(255,255,255,0.06); border:none; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width:860px) {
+  .hero-nav, .hero-body, .section, .footer { padding-left:28px; padding-right:28px; }
+  .hero-foot { padding:22px 28px; }
+  .hero h1 { font-size:clamp(56px, 14vw, 100px); }
+  .hero-lower { grid-template-columns:1fr; gap:32px; }
+  .hero-right { align-items:flex-start; }
+  .hero-contact { text-align:left; }
+  .hero-socials { justify-content:flex-start; }
+  .stat-strip { grid-template-columns:repeat(2, 1fr); }
+  .cap-grid { grid-template-columns:1fr; }
+  .exp-item { grid-template-columns:1fr; gap:14px; }
+  .proj-grid { grid-template-columns:1fr; }
+  .social-showcase { grid-template-columns:1fr; }
+  .honors-grid { grid-template-columns:1fr; }
+  .edu-card { grid-template-columns:1fr; padding:32px 28px; }
+  .edu-year { display:none; }
+  .vol-item { grid-template-columns:1fr; gap:10px; }
+  .footer { grid-template-columns:1fr; gap:36px; }
+  .footer-info { text-align:left; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <nav class="hero-nav">
+    <span class="nav-logo">My Chedo · 2026</span>
+    <ul class="nav-links">
+      <li><a href="#experience">Work</a></li>
+      <li><a href="#social">Social</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#honors">Honors</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/in/mychedo/" target="_blank">LinkedIn ↗</a>
+      <a href="mailto:meye.chedo@gmail.com">Email ↗</a>
+    </div>
+  </nav>
+
+  <div class="hero-body">
+    <div class="hero-overline">Social Media &amp; Digital Marketing Manager</div>
+    <h1>My<span>Chedo.</span></h1>
+    <div class="hero-lower">
+      <p class="hero-bio">I build audiences, grow brands, and turn content into community — through data-informed strategy, Reels-first storytelling, and influencer relationships that convert. Bilingual in English &amp; Vietnamese. Based in the Bay Area.</p>
+      <div class="hero-right">
+        <div class="hero-contact">
+          <a href="tel:5107306411">(510) 730-6411</a>
+          <a href="mailto:meye.chedo@gmail.com">meye.chedo@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mychedo/" target="_blank">linkedin.com/in/mychedo</a>
+          <span>Fremont, CA · Bay Area</span>
+        </div>
+        <div class="hero-socials">
+          <a class="social-btn" href="https://www.linkedin.com/in/mychedo/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="social-btn" href="https://www.instagram.com/_bepluto/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @_bepluto
+          </a>
+          <a class="social-btn" href="https://www.instagram.com/bobateaology/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @bobateaology
+          </a>
+          <a class="social-btn" href="https://www.instagram.com/linkoncitycouncil/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @linkoncitycouncil
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <span>5+ Years Experience · Bay Area, CA</span>
+    <span>English &amp; Vietnamese · Magna Cum Laude · Available Now</span>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stat-strip">
+  <div class="stat-cell reveal"><div class="stat-n">498K</div><div class="stat-l">Peak Monthly Views</div></div>
+  <div class="stat-cell reveal"><div class="stat-n">38.8K</div><div class="stat-l">Interactions / 30 Days</div></div>
+  <div class="stat-cell reveal"><div class="stat-n">32K+</div><div class="stat-l">Followers Built</div></div>
+  <div class="stat-cell reveal"><div class="stat-n">93%</div><div class="stat-l">Non-Follower Discovery</div></div>
+  <div class="stat-cell reveal"><div class="stat-n">+4,700%</div><div class="stat-l">View Growth · 3 Months</div></div>
+</div>
+
+<!-- ── CAPABILITIES ── -->
+<section class="section">
+  <div class="section-tag">01 — Capabilities</div>
+  <h2 class="section-title">What I <em>Do</em></h2>
+  <div class="cap-grid">
+    <div class="cap-card reveal"><div class="cap-num">01</div><div class="cap-title">Organic Social Strategy</div><div class="cap-tags"><span class="cap-tag">Instagram Cadence</span><span class="cap-tag">TikTok &amp; Reels</span><span class="cap-tag">Editorial Calendars</span><span class="cap-tag">Seasonal Storytelling</span><span class="cap-tag">Community Engagement</span><span class="cap-tag">UGC Curation</span></div></div>
+    <div class="cap-card reveal"><div class="cap-num">02</div><div class="cap-title">Influencer &amp; Creator Marketing</div><div class="cap-tags"><span class="cap-tag">Creator Outreach</span><span class="cap-tag">Ambassador Programs</span><span class="cap-tag">Campaign Briefs</span><span class="cap-tag">Content Approvals</span><span class="cap-tag">Vendor Management</span><span class="cap-tag">Event Coverage</span></div></div>
+    <div class="cap-card reveal"><div class="cap-num">03</div><div class="cap-title">Analytics &amp; Reporting</div><div class="cap-tags"><span class="cap-tag">KPI Recaps</span><span class="cap-tag">Engagement Rate</span><span class="cap-tag">Follower Growth</span><span class="cap-tag">Top / Bottom Post</span><span class="cap-tag">Competitor Research</span><span class="cap-tag">Trend Monitoring</span></div></div>
+    <div class="cap-card reveal"><div class="cap-num">04</div><div class="cap-title">Creative Production</div><div class="cap-tags"><span class="cap-tag">Short-Form Video</span><span class="cap-tag">Photo Editing</span><span class="cap-tag">Copywriting</span><span class="cap-tag">Canva</span><span class="cap-tag">CapCut</span><span class="cap-tag">Adobe Photoshop</span><span class="cap-tag">Lightroom</span><span class="cap-tag">Figma</span></div></div>
+    <div class="cap-card reveal"><div class="cap-num">05</div><div class="cap-title">Platform Proficiency</div><div class="cap-tags"><span class="cap-tag">Meta Business Suite</span><span class="cap-tag">Google Analytics</span><span class="cap-tag">Facebook Business Mgr</span><span class="cap-tag">Pinterest</span><span class="cap-tag">LinkedIn</span><span class="cap-tag">Microsoft Office</span></div></div>
+    <div class="cap-card reveal"><div class="cap-num">06</div><div class="cap-title">Project &amp; Team Management</div><div class="cap-tags"><span class="cap-tag">Cross-Functional Collab</span><span class="cap-tag">Creative Briefing</span><span class="cap-tag">Asset Timelines</span><span class="cap-tag">Multi-Project Oversight</span><span class="cap-tag">Stakeholder Reporting</span></div></div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section class="section section-dark" id="experience">
+  <div class="section-tag">02 — Experience</div>
+  <h2 class="section-title">Where I've <em>Worked</em></h2>
+
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-org">Linkon City Council</div>
+      <div class="exp-date">Bay Area, CA<br>Jul 2025 – Present</div>
+      <a class="exp-link" href="https://www.instagram.com/linkoncitycouncil/" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>View Profile ↗</a>
+    </div>
+    <div>
+      <div class="exp-role">Social Media Lead &amp; Chief of Staff</div>
+      <ul class="exp-list">
+        <li>Oversaw all press, PR, and social media strategy across Instagram and related platforms for a Bay Area community organization.</li>
+        <li>Drove <strong>498K views in a single month</strong> (+44% MoM), sustained at 316K and 233K in following months.</li>
+        <li>Generated <strong>38,854 interactions in 30 days</strong> — 88.8% Reels-driven — directly informing content prioritization.</li>
+        <li>Achieved 70–83% non-follower reach, significantly expanding discoverability beyond the existing audience.</li>
+      </ul>
+      <div class="exp-chips"><span class="exp-chip">Organic Social</span><span class="exp-chip">Reels Strategy</span><span class="exp-chip">Community Mgmt</span><span class="exp-chip">PR &amp; Press</span></div>
+    </div>
+  </div>
+
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-org">_bepluto</div>
+      <div class="exp-date">Remote<br>May 2021 – Present</div>
+      <a class="exp-link" href="https://www.instagram.com/_bepluto/" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>View Profile ↗</a>
+    </div>
+    <div>
+      <div class="exp-role">Founder &amp; Creative Director</div>
+      <ul class="exp-list">
+        <li>Grew a digital art and storytelling brand to <strong>32,000+ followers</strong> across YouTube, TikTok, and X through strategic content marketing.</li>
+        <li>Directed a team of 10 artists delivering custom work for <strong>50+ global Roblox developers</strong> and social media influencers.</li>
+        <li>Coordinated a creator community of <strong>1,100+ artists</strong>, securing original commissions across platforms.</li>
+        <li>Partnered with international brands and event organizers for global creative programs and fan exhibitions.</li>
+      </ul>
+      <div class="exp-chips"><span class="exp-chip">Influencer Relations</span><span class="exp-chip">Team Leadership</span><span class="exp-chip">Multi-Platform Growth</span><span class="exp-chip">Community Building</span></div>
+    </div>
+  </div>
+
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-org">Bobateaology</div>
+      <div class="exp-date">Bay Area, CA<br>Jul 2018 – Present</div>
+      <a class="exp-link" href="https://www.instagram.com/bobateaology/" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>View Profile ↗</a>
+    </div>
+    <div>
+      <div class="exp-role">Founder &amp; Content Creator</div>
+      <ul class="exp-list">
+        <li>Built a Bay Area food &amp; travel brand to <strong>1,100+ followers</strong> and <strong>48K monthly views</strong> at peak through strategic short-form content.</li>
+        <li>Achieved <strong>74–93% non-follower discovery rate</strong>, demonstrating strong algorithmic reach beyond existing audience.</li>
+        <li>Produced, filmed, and edited <strong>50+ Reels</strong> optimized through behavior analysis, trending audio, hashtag strategy, and geo-tagging.</li>
+        <li>Conducted weekly A/B testing of hook captions, posting times, and visual layouts to increase average engagement 35% MoM.</li>
+      </ul>
+      <div class="exp-chips"><span class="exp-chip">Content Creation</span><span class="exp-chip">Video Production</span><span class="exp-chip">Brand Building</span><span class="exp-chip">Algorithm Growth</span></div>
+    </div>
+  </div>
+
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-org">Rotaract SJSU</div>
+      <div class="exp-date">San Jose, CA<br>Apr 2025 – Present</div>
+    </div>
+    <div>
+      <div class="exp-role">Public Image Chair</div>
+      <ul class="exp-list">
+        <li>Grew monthly views from <strong>583 to 28,000+</strong> (+4,700%) in three months through data-informed content strategy.</li>
+        <li>60–81% of views generated by non-followers, expanding community awareness beyond existing membership.</li>
+        <li>Increased social following by <strong>56%</strong> through targeted event promotion, flyer design, and engagement optimization.</li>
+      </ul>
+      <div class="exp-chips"><span class="exp-chip">Growth Strategy</span><span class="exp-chip">Event Promotion</span><span class="exp-chip">Visual Storytelling</span></div>
+    </div>
+  </div>
+
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-org">Produckt Design SJSU</div>
+      <div class="exp-date">San Jose, CA<br>Jan 2026 – May 2026</div>
+    </div>
+    <div>
+      <div class="exp-role">Social Media Manager</div>
+      <ul class="exp-list">
+        <li>Generated <strong>57,120 content views</strong> and reached 10,652 unique accounts in 90 days.</li>
+        <li>Drove 1,100+ audience interactions through strategic content planning for a 51-member active design community.</li>
+        <li>Achieved <strong>81.5% non-follower view rate</strong>, demonstrating successful reach beyond existing audience.</li>
+      </ul>
+      <div class="exp-chips"><span class="exp-chip">Content Planning</span><span class="exp-chip">Discovery Growth</span><span class="exp-chip">Community</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOCIAL SHOWCASE ── -->
+<section class="section section-dark" id="social" style="padding-top:0;">
+  <div class="section-tag">03 — Live Profiles</div>
+  <h2 class="section-title">My <em>Platforms</em></h2>
+  <div class="social-showcase">
+    <a class="social-card" href="https://www.instagram.com/linkoncitycouncil/" target="_blank">
+      <div class="social-card-top">
+        <div>
+          <div class="social-handle">@linkoncitycouncil</div>
+          <div class="social-name">Linkon City Council</div>
+        </div>
+        <span class="social-arrow">↗</span>
+      </div>
+      <p class="social-desc">Bay Area community organization. Social media strategy, press, and digital engagement across Instagram — driving half a million views monthly.</p>
+      <div>
+        <div class="social-stat">498K</div>
+        <div class="social-stat-l">Peak Monthly Views</div>
+      </div>
+    </a>
+    <a class="social-card" href="https://www.instagram.com/_bepluto/" target="_blank">
+      <div class="social-card-top">
+        <div>
+          <div class="social-handle">@_bepluto</div>
+          <div class="social-name">_bepluto</div>
+        </div>
+        <span class="social-arrow">↗</span>
+      </div>
+      <p class="social-desc">Digital art &amp; storytelling brand. Character design, creator collaborations, and community building across YouTube, TikTok, and X.</p>
+      <div>
+        <div class="social-stat">32K+</div>
+        <div class="social-stat-l">Followers Across Platforms</div>
+      </div>
+    </a>
+    <a class="social-card" href="https://www.instagram.com/bobateaology/" target="_blank">
+      <div class="social-card-top">
+        <div>
+          <div class="social-handle">@bobateaology</div>
+          <div class="social-name">Bobateaology</div>
+        </div>
+        <span class="social-arrow">↗</span>
+      </div>
+      <p class="social-desc">Bay Area food &amp; travel media brand. Short-form Reels, trend-led editing, and geo-targeted content with 74–93% non-follower discovery.</p>
+      <div>
+        <div class="social-stat">48K</div>
+        <div class="social-stat-l">Peak Monthly Views</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section class="section section-paper" id="projects">
+  <div class="section-tag">04 — Marketing Projects</div>
+  <h2 class="section-title">Selected <em>Work</em></h2>
+  <div class="proj-grid">
+    <div class="proj-card reveal">
+      <div>
+        <div class="proj-label">Multi-Channel Campaign · SJSU</div>
+        <div class="proj-title">Business Honors Program Outreach &amp; Visibility</div>
+        <p class="proj-desc">Led a multi-channel outreach initiative supporting recruitment and student visibility for the Lucas College of Business. Coordinated a 7-person ambassador team for high-visibility events including Fall Preview Day, engaging 250+ prospective students. Directed the official graduation showcase for 125+ honors graduates.</p>
+      </div>
+      <div class="proj-metric">
+        <span class="proj-metric-n">#1</span>
+        <span class="proj-metric-l">Search Visibility Among SJSU Academic Programs</span>
+      </div>
+    </div>
+    <div class="proj-card reveal">
+      <div>
+        <div class="proj-label">Research &amp; Stakeholder Reporting</div>
+        <div class="proj-title">Christmas In The Park — Economic Impact Study</div>
+        <p class="proj-desc">Led a student consulting project analyzing the economic impact of a nonprofit festival serving 800K+ annual visitors. Designed a 25-question Qualtrics survey (421 responses) and integrated field interviews and Placer.ai data to build a scalable ROI model. Presented findings to city and nonprofit stakeholders.</p>
+      </div>
+      <div class="proj-metric">
+        <span class="proj-metric-n">$86</span>
+        <span class="proj-metric-l">Economic Impact Per $1 Invested</span>
+      </div>
+    </div>
+    <div class="proj-card reveal">
+      <div>
+        <div class="proj-label">Global Strategy · SJSU Honors</div>
+        <div class="proj-title">Porto's Bakery Global Expansion Strategy</div>
+        <p class="proj-desc">Collaborated on a competitive consulting project evaluating international expansion for Porto's Bakery across Spain, Egypt, and China. Conducted market analysis, FDI assessment, cultural adaptation planning, financial forecasting, and market entry strategy. Recommendations recognized among the strongest submissions.</p>
+      </div>
+      <div class="proj-metric">
+        <span class="proj-metric-n">3</span>
+        <span class="proj-metric-l">Countries Analyzed Across $92B+ Total Market</span>
+      </div>
+    </div>
+    <div class="proj-card reveal">
+      <div>
+        <div class="proj-label">Community Research · SJSU</div>
+        <div class="proj-title">Business Inventory @ CommUniversity SJSU</div>
+        <p class="proj-desc">Led hands-on community-based business research to update the Spartan Keyes neighborhood business directory, covering a 371-acre district. Performed in-person fieldwork to identify and document 30+ previously undocumented businesses, contributing to a 60+ business master directory.</p>
+      </div>
+      <div class="proj-metric">
+        <span class="proj-metric-n">60+</span>
+        <span class="proj-metric-l">Businesses Documented in Master Directory</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOLS ── -->
+<section class="section section-dark">
+  <div class="section-tag">05 — Tools &amp; Platforms</div>
+  <h2 class="section-title">My <em>Stack</em></h2>
+  <div class="tools-wrap">
+    <span class="tool featured">Instagram</span>
+    <span class="tool featured">TikTok</span>
+    <span class="tool featured">Facebook</span>
+    <span class="tool featured">Pinterest</span>
+    <span class="tool featured">LinkedIn</span>
+    <span class="tool featured">YouTube</span>
+    <span class="tool">Meta Business Suite</span>
+    <span class="tool">Facebook Business Manager</span>
+    <span class="tool">Google Analytics</span>
+    <span class="tool">Adobe Photoshop</span>
+    <span class="tool">Adobe Lightroom</span>
+    <span class="tool">Canva</span>
+    <span class="tool">CapCut</span>
+    <span class="tool">Figma</span>
+    <span class="tool">Procreate</span>
+    <span class="tool">Excel / Google Sheets</span>
+    <span class="tool">Microsoft Office</span>
+    <span class="tool">Qualtrics XM</span>
+    <span class="tool">NVivo</span>
+    <span class="tool">Placer.ai</span>
+  </div>
+</section>
+
+<!-- ── HONORS ── -->
+<section class="section" id="honors">
+  <div class="section-tag">06 — Honors &amp; Awards</div>
+  <h2 class="section-title">Recognized <em>Achievement</em></h2>
+  <div class="honors-grid">
+    <div class="honor-card reveal">
+      <div class="honor-title">A.S. First Generation Student Scholarship</div>
+      <div class="honor-org">Associated Student Government, San Jose State University</div>
+      <div class="honor-date">Nov 2025</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">John Malcolm Aitken Scholarship</div>
+      <div class="honor-org">Lucas College &amp; Graduate School of Business</div>
+      <div class="honor-date">May 2025</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">President's Scholar</div>
+      <div class="honor-org">Lucas College and Graduate School of Business · 4.0 GPA Distinction</div>
+      <div class="honor-date">Apr 2025</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">Carolyn B. Hayes Business Scholarship</div>
+      <div class="honor-org">Lucas College of Business · Outstanding academic record &amp; leadership</div>
+      <div class="honor-date">Nov 2023</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">Dean's Scholar</div>
+      <div class="honor-org">San Jose State University</div>
+      <div class="honor-date">May 2023</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">Rodney Dale Friedle Scholarship</div>
+      <div class="honor-org">Lucas College of Business · Outstanding academic record &amp; community service</div>
+      <div class="honor-date">Fall 2023</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">Golden State Seal Merit Diploma</div>
+      <div class="honor-org">California Board of Education</div>
+      <div class="honor-date">Jun 2022</div>
+    </div>
+    <div class="honor-card reveal">
+      <div class="honor-title">Magna Cum Laude</div>
+      <div class="honor-org">San Jose State University · Business Administration &amp; Philosophy</div>
+      <div class="honor-date">2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section class="section section-paper" id="education">
+  <div class="section-tag">07 — Education</div>
+  <h2 class="section-title">Academic <em>Background</em></h2>
+  <div class="edu-card reveal">
+    <div>
+      <div class="edu-school">San José State University</div>
+      <div class="edu-degrees">
+        B.S. Business Administration — Management · GPA 3.89<br>
+        A.A. Philosophy · GPA 4.0<br>
+        San Jose, California · May 2026
+      </div>
+      <div class="edu-badges">
+        <span class="edu-badge">Magna Cum Laude</span>
+        <span class="edu-badge">Business Honors Program</span>
+        <span class="edu-badge">Lucas College of Business</span>
+        <span class="edu-badge">President's Scholar</span>
+        <span class="edu-badge">Honors Ambassador</span>
+      </div>
+    </div>
+    <div class="edu-year">2026</div>
+  </div>
+</section>
+
+<!-- ── VOLUNTEER ── -->
+<section class="section">
+  <div class="section-tag">08 — Volunteer &amp; Community</div>
+  <h2 class="section-title">Giving <em>Back</em></h2>
+  <div class="vol-list">
+    <div class="vol-item reveal">
+      <div>
+        <div class="vol-org">Rotary International</div>
+        <div class="vol-date">Apr 2025</div>
+      </div>
+      <div>
+        <div class="vol-role">Rotaractor</div>
+        <p class="vol-desc">Committed to community service, organizational leadership, and Rotary's mission of "service above self." Designs flyers, writes correspondences, manages social media, and ensures consistent branding across all club platforms.</p>
+      </div>
+    </div>
+    <div class="vol-item reveal">
+      <div>
+        <div class="vol-org">San Jose State University</div>
+        <div class="vol-date">Aug 2023 – Dec 2024</div>
+      </div>
+      <div>
+        <div class="vol-role">Academic Notetaker</div>
+        <p class="vol-desc">Provided detailed, organized notes for students requiring academic accommodations (BUS4-188, AMS10). Delivered 60+ lecture materials per semester, supporting a student body of 650+ through clear and personalized documentation.</p>
+      </div>
+    </div>
+    <div class="vol-item reveal">
+      <div>
+        <div class="vol-org">The Salvation Army</div>
+        <div class="vol-date">Sep 2018 – Mar 2020</div>
+      </div>
+      <div>
+        <div class="vol-role">Student Volunteer</div>
+        <p class="vol-desc">Tutored 100+ primary school students in an after-school music program, providing 200+ hours of academic support. Led a Vietnamese heritage and culture showcase at a community event with 100+ attendees.</p>
+      </div>
+    </div>
+    <div class="vol-item reveal">
+      <div>
+        <div class="vol-org">Independent Consultant</div>
+        <div class="vol-date">Mar 2020</div>
+      </div>
+      <div>
+        <div class="vol-role">Vietnamese Translator</div>
+        <p class="vol-desc">Provided 100+ hours of translation services for Vietnamese-speaking parents during 20+ parent-teacher conferences. Assisted 10+ individuals in hospitals and clinics, and cross-translated 50+ legal and medical documents.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:52px;">
+    <div class="section-tag" style="margin-bottom:10px;">Languages</div>
+    <div class="lang-row">
+      <div class="lang-item">
+        <div class="lang-name">English</div>
+        <div class="lang-level">Native or Bilingual Proficiency</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name">Vietnamese</div>
+        <div class="lang-level">Native or Bilingual Proficiency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RECOMMENDATION ── -->
+<section class="section section-dark">
+  <div class="section-tag">09 — Recommendation</div>
+  <h2 class="section-title">What Others <em>Say</em></h2>
+  <div class="rec-card reveal">
+    <p class="rec-text">"My stood out as an engaged and proactive team member. Her outgoing personality naturally fostered strong collaboration, and her consistent responsiveness helped ensure clear and efficient communication. My played a key role in helping our team exceed deadlines and deliver a well-executed project. She demonstrated sharp analytical thinking, offering innovative solutions to complex business challenges. My Chedo brings a well-rounded combination of leadership, strategic thinking, and community involvement that would make her a strong asset to any organization."</p>
+    <div class="rec-attr">Christopher B. · Operations Management, SJSU</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div>
+    <div class="footer-headline">Let's build something <em>worth following.</em></div>
+    <div class="footer-socials">
+      <a class="social-btn" href="https://www.linkedin.com/in/mychedo/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a class="social-btn" href="https://www.instagram.com/_bepluto/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @_bepluto
+      </a>
+      <a class="social-btn" href="https://www.instagram.com/bobateaology/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @bobateaology
+      </a>
+      <a class="social-btn" href="https://www.instagram.com/linkoncitycouncil/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @linkoncitycouncil
+      </a>
+    </div>
+  </div>
+  <div class="footer-info">
+    <span>My Chedo · Fremont, CA</span>
+    <a href="tel:5107306411">(510) 730-6411</a>
+    <a href="mailto:meye.chedo@gmail.com">meye.chedo@gmail.com</a>
+    <a href="https://www.linkedin.com/in/mychedo/" target="_blank">linkedin.com/in/mychedo</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 55);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
